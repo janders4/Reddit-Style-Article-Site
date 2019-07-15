@@ -1,29 +1,33 @@
 import React, { Component } from "react";
 import "../styles/nav.css";
+import * as api from "../utils";
 
 class Nav extends Component {
+  state = {
+    topics: []
+  };
   render() {
-    const state = {
-      topics: [
-        {
-          slug: "coding",
-          description: "Code is love, code is life"
-        },
-        {
-          slug: "stuff",
-          description: "Code is love, code is life"
-        }
-      ]
-    };
+    console.log(this.state);
     return (
-      <div className="nav">
-        {state.topics.map(topic => {
-          return <h2>{topic.slug}</h2>;
-        })}
+      <div>
+        <div className="nav">
+          {this.state.topics.map(topic => {
+            return <h2>{topic.slug}</h2>;
+          })}
+        </div>
       </div>
     );
   }
-  componentDidMount() {}
+
+  componentDidMount = () => {
+    this.fetchIds();
+  };
+
+  fetchIds = async () => {
+    api.getIds().then(({ topics }) => {
+      this.setState({ topics });
+    });
+  };
 }
 
 export default Nav;
