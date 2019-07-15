@@ -1,0 +1,16 @@
+.header {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  grid-area: header;
+}
+
+.headerBox {
+  border: white 7px solid;
+  width: 30%;
+  margin: auto;
+  height: auto;
+  padding: 15px;
+  -webkit-box-shadow: 0 1px 4px rgba(7, 7, 7, 0.3);
+}
