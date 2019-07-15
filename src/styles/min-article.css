@@ -1,0 +1,40 @@
+.minArticle-container {
+  display: grid;
+  grid-template-rows: 0.75fr 2.5fr 0.5fr;
+  grid-template-columns: 3fr 2fr 1.5fr;
+  grid-template-areas:
+    "title title title"
+    "article article article"
+    "author comments likes";
+  border: white 1px solid;
+  height: 150px;
+  margin: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(240, 255, 255, 0.228);
+}
+
+.title {
+  grid-area: title;
+  border: white 1px solid;
+}
+
+.article {
+  grid-area: article;
+  border: white 1px solid;
+  overflow: hidden;
+}
+
+.author {
+  grid-area: author;
+  border: white 1px solid;
+}
+
+.comments {
+  grid-area: comments;
+  border: white 1px solid;
+}
+
+.likes {
+  grid-area: likes;
+  border: white 1px solid;
+}

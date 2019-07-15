@@ -23,11 +23,11 @@ class Nav extends Component {
   }
 
   componentDidMount = () => {
-    this.fetchIds();
+    this.fetchTopics();
   };
 
-  fetchIds = async () => {
-    api.getIds().then(({ topics }) => {
+  fetchTopics = async () => {
+    api.getTopics().then(({ topics }) => {
       this.setState({ topics });
     });
   };
