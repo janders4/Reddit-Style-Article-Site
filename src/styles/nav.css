@@ -9,3 +9,9 @@
   /* border: white solid 3px; */
   height: 20px;
 }
+
+.links {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}

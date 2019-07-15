@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 import "../styles/nav.css";
 import * as api from "../utils";
 
@@ -7,14 +8,16 @@ class Nav extends Component {
     topics: []
   };
   render() {
-    console.log(this.state);
     return (
-      <div>
-        <div className="nav">
-          {this.state.topics.map(topic => {
-            return <h2>{topic.slug}</h2>;
+      <div className="nav">
+        {this.state.topics.length > 0 &&
+          this.state.topics.map(topic => {
+            return (
+              <Link to="/" key={topic.slug} className="links">
+                {topic.slug}
+              </Link>
+            );
           })}
-        </div>
       </div>
     );
   }
