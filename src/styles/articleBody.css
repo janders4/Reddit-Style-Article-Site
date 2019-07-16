@@ -12,6 +12,7 @@
 .homeLink {
   grid-area: homeLink;
   height: 40px;
+  text-decoration: none;
 }
 
 .article {

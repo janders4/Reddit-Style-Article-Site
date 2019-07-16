@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Router className="routerBox">
-          <HomePage path="/" />
+          <HomePage path="/*" />
           <ArticleBody path="/article/:id" />
         </Router>
         <Footer />

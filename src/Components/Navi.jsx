@@ -13,7 +13,11 @@ class Navi extends Component {
         {this.state.topics.length > 1 &&
           this.state.topics.map(topic => {
             return (
-              <Link to="/" key={topic.slug} className="links">
+              <Link
+                to={`/topic/${topic.slug}`}
+                key={topic.slug}
+                className="links"
+              >
                 {topic.slug}
               </Link>
             );

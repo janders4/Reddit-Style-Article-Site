@@ -6,9 +6,11 @@ import * as api from "../utils";
 
 class Articles extends Component {
   state = {
-    articles: []
+    articles: [],
+    topic: ""
   };
   render() {
+    console.log(this.props);
     const { articles } = this.state;
     return (
       <div className="articles">
@@ -22,8 +24,14 @@ class Articles extends Component {
     this.getArticles();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.topic !== prevProps.topic) {
+      this.getArticles();
+    }
+  }
+
   getArticles = () => {
-    api.fetchArticles().then(data => {
+    api.fetchArticles(this.props.topic).then(data => {
       this.setState({ articles: data });
     });
   };

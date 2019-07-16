@@ -10,9 +10,17 @@ export const getTopics = async () => {
 //   return word.charAt(0).toUpperCase() + word.slice(1);
 // };
 
-export const fetchArticles = async () => {
-  const { data } = await axios.get(`${BASE_URL}articles`);
-  return data;
+export const fetchArticles = async topic => {
+  console.log(topic);
+  if (topic === "All") {
+    const { data } = await axios.get(`${BASE_URL}articles`);
+    return data;
+  } else {
+    const { data } = await axios.get(`${BASE_URL}articles`, {
+      params: { topic }
+    });
+    return data;
+  }
 };
 
 export const fetchArticleById = async id => {
