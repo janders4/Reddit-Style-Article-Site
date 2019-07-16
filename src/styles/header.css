@@ -5,6 +5,7 @@
   padding-bottom: 10px;
   width: 100%;
   grid-area: header;
+  height: 95px;
 }
 
 .headerBox {

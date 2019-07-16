@@ -1,0 +1,13 @@
+p {
+  padding: 20px;
+}
+
+h2 {
+  color: white;
+}
+
+.links {
+  color: white;
+  /* text-decoration: none; */
+  cursor: pointer;
+}

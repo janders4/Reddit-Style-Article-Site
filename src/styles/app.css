@@ -11,8 +11,12 @@
   grid-template-rows: 2fr 1fr 10fr 1fr;
   grid-template-areas:
     "header"
-    "nav"
+    "articles"
     "articles"
     "footer";
   text-align: center;
+}
+.routerBox {
+  grid-area: articles;
+  overflow: scroll;
 }

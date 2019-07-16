@@ -1,19 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import Header from "./Components/Header";
 import "./styles/app.css";
-import Nav from "./Components/Nav";
-import Articles from "./Components/Articles";
 import Footer from "./Components/Footer";
+import { Router } from "@reach/router";
+import SingleArticle from "./Components/SingleArticle";
+import HomePage from "./Components/HomePage";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Nav />
-      <Articles />
-      <Footer />
-    </div>
-  );
+class App extends Component {
+  state = {};
+  render() {
+    console.log(this.props);
+    return (
+      <div className="App">
+        <Header />
+        <Router className="routerBox">
+          <HomePage path="/" />
+          <SingleArticle path="/article/:id" />
+        </Router>
+        <Footer />
+      </div>
+    );
+  }
+  componentDidMount = () => {};
 }
 
 export default App;

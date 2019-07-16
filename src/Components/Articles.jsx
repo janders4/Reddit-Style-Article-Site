@@ -10,7 +10,6 @@ class Articles extends Component {
   };
   render() {
     const { articles } = this.state;
-    console.log(this.state.articles);
     return (
       <div className="articles">
         {articles.map(article => {

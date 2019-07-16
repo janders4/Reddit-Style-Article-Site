@@ -1,0 +1,18 @@
+.bodyContainer {
+  /* grid-area: articles; */
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 35fr;
+  grid-template-areas:
+    "nav"
+    "articles";
+}
+
+.navi {
+  grid-area: nav;
+}
+
+.articles {
+  grid-area: articles;
+  overflow: scroll;
+}

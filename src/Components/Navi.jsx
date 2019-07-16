@@ -3,14 +3,14 @@ import { Link } from "@reach/router";
 import "../styles/nav.css";
 import * as api from "../utils";
 
-class Nav extends Component {
+class Navi extends Component {
   state = {
     topics: []
   };
   render() {
     return (
       <div className="nav">
-        {this.state.topics.length > 0 &&
+        {this.state.topics.length > 1 &&
           this.state.topics.map(topic => {
             return (
               <Link to="/" key={topic.slug} className="links">
@@ -28,9 +28,9 @@ class Nav extends Component {
 
   fetchTopics = async () => {
     api.getTopics().then(({ topics }) => {
-      this.setState({ topics });
+      this.setState({ topics: [{ slug: "All" }, ...topics] });
     });
   };
 }
 
-export default Nav;
+export default Navi;
