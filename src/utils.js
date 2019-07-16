@@ -27,3 +27,9 @@ export const fetchArticleById = async id => {
   const { data } = await axios.get(`${BASE_URL}articles/${id}`);
   return data;
 };
+
+export const fetchComments = async id => {
+  const { data } = await axios.get(`${BASE_URL}articles/33/comments`);
+  console.log(data);
+  return data;
+};

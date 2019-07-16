@@ -4,9 +4,9 @@ You should implement the following functionality in your website. Check the lect
 
 As a user, I should be able to...
 DONE - view a list of all articles
-view a page for each topic with a list of related articles.
+DONE - view a page for each topic with a list of related articles.
 DONE - view an individual article.
-view an individual article's comments.
+DONE - view an individual article's comments.
 sort articles by:
 date created
 comment_count
