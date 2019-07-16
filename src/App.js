@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import "./styles/app.css";
 import Footer from "./Components/Footer";
 import { Router } from "@reach/router";
-import SingleArticle from "./Components/SingleArticle";
+import ArticleBody from "./Components/ArticleBody";
 import HomePage from "./Components/HomePage";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
         <Header />
         <Router className="routerBox">
           <HomePage path="/" />
-          <SingleArticle path="/article/:id" />
+          <ArticleBody path="/article/:id" />
         </Router>
         <Footer />
       </div>

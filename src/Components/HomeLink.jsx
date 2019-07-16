@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 function HomeLink(props) {
   return (
-    <div>
+    <div className="homeLink">
       <Link to="/">
         <h2>Home</h2>
       </Link>

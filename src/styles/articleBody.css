@@ -1,0 +1,21 @@
+.articleContainer {
+  /* grid-area: articles; */
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 35fr 1fr;
+  grid-template-areas:
+    "homeLink"
+    "article"
+    "comments";
+}
+
+.homeLink {
+  grid-area: homeLink;
+  height: 40px;
+}
+
+.article {
+  grid-area: article;
+  overflow-y: scroll;
+  height: 100%;
+}

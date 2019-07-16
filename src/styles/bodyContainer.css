@@ -1,5 +1,5 @@
 .bodyContainer {
-  /* grid-area: articles; */
+  grid-area: articles;
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 35fr;
