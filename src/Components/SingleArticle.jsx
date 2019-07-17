@@ -8,7 +8,6 @@ class SingleArticle extends Component {
   state = { article: {} };
   render() {
     const { article } = this.state;
-    console.log(article);
     return (
       <div className="article">
         <h2 className="links">{article.title}</h2>

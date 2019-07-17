@@ -1,0 +1,12 @@
+img {
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 10;
+}
+
+img:hover {
+  box-shadow: 0, 0, 10px, 5px, red;
+  width: 33px;
+  height: 33px;
+  transition: 300ms;
+}

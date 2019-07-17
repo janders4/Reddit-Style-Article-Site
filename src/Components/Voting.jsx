@@ -21,7 +21,7 @@ class Voting extends Component {
             width="40px"
             onClick={() => this.handleVote(1)}
           />
-          <h3>{this.props.votes + this.state.voteChange}</h3>
+          <h3>{this.props.votes + this.state.voteChange || 0}</h3>
           <img
             className="thumbsdown"
             src={thumbsDown}

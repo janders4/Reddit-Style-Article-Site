@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://reddit-clone-john.herokuapp.com/api";
 export const getTopics = async () => {
-  const { data } = await axios.get(`${BASE_URL}topics`);
+  const { data } = await axios.get(`${BASE_URL}/topics`);
   return data;
 };
 
@@ -38,5 +38,10 @@ export const postCommentVote = async (id, vote, section) => {
     `${BASE_URL}/${section}/${id}`,
     voteObject
   );
+  return data;
+};
+
+export const deleteComment = async id => {
+  const { data } = await axios.delete(`${BASE_URL}/comments/${id}`);
   return data;
 };

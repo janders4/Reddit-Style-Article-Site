@@ -9,6 +9,7 @@ DONE - view an individual article.
 DONE - view an individual article's comments.
 DONE - vote on a comment and immediately see the change.
 DONE - vote on an article and immediately see the change.
+DONE - delete my own comments (as a default logged in user. e.g. 'jessjelly').
 
 Wednesday - post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
 
@@ -16,8 +17,6 @@ sort articles by:
 date created
 comment_count
 votes
-
-delete my own comments (as a default logged in user. e.g. 'jessjelly').
 
 Style To-Do:
 Add article voting to be part of article title and fixed in place
