@@ -11,11 +11,7 @@ DONE - vote on a comment and immediately see the change.
 DONE - vote on an article and immediately see the change.
 DONE - delete my own comments (as a default logged in user. e.g. 'jessjelly').
 Done - post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
-
-sort articles by:
-date created
-comment_count
-votes
+DONE - sort articles by: date created, comment_count, votes
 
 Style To-Do:
 Add article voting to be part of article title and fixed in place

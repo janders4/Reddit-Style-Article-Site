@@ -4,18 +4,25 @@ class Sort extends Component {
   render() {
     return (
       <div>
-        <select>
-          <option>Votes</option>
-          <option>Date Created</option>
-          <option>Comment Count</option>
+        <select onChange={this.handleSortByChange}>
+          <option value="votes">Votes</option>
+          <option value="created_at">Date Created</option>
+          <option value="comment_count">Comment Count</option>
         </select>
-        <select>
-          <option>Ascending</option>
-          <option>Decending</option>
+        <select onChange={this.handleDirectionChange}>
+          <option value="desc">Decending</option>
+          <option value="asc">Ascending</option>
         </select>
       </div>
     );
   }
+  handleSortByChange = event => {
+    this.props.getSort(event.target.value);
+  };
+
+  handleDirectionChange = event => {
+    this.props.getDir(event.target.value);
+  };
 }
 
 export default Sort;

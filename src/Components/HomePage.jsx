@@ -11,10 +11,11 @@ class HomePage extends Component {
     direction: "desc"
   };
   render() {
+    console.log(this.state, " <<<< State");
     const { sortBy, direction } = this.state;
     return (
       <div className="bodyContainer">
-        <Sort />
+        <Sort getSort={this.setSortParams} getDir={this.setDirectionParams} />
         <Navi className="navi" setTopic={this.topicChange} />
         <Router primary={false}>
           <Articles
@@ -33,6 +34,12 @@ class HomePage extends Component {
       </div>
     );
   }
+  setSortParams = sort => {
+    this.setState({ sortBy: sort });
+  };
+  setDirectionParams = dir => {
+    this.setState({ direction: dir });
+  };
 }
 
 export default HomePage;

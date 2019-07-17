@@ -27,6 +27,12 @@ class Articles extends Component {
     if (this.props.topic !== prevProps.topic) {
       this.getArticles();
     }
+    if (this.props.sortBy !== prevProps.sortBy) {
+      this.getArticles();
+    }
+    if (this.props.direction !== prevProps.direction) {
+      this.getArticles();
+    }
   }
 
   getArticles = () => {

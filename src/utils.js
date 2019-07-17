@@ -11,7 +11,6 @@ export const getTopics = async () => {
 // };
 
 export const fetchArticles = async (topic, sortBy, direction) => {
-  console.log(topic, sortBy, direction);
   if (topic === "All") {
     const { data } = await axios.get(
       `${BASE_URL}/articles?sort_by=${sortBy}&&order=${direction}`
