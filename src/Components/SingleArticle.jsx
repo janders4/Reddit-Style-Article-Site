@@ -3,6 +3,7 @@ import "../styles/singleArticle.css";
 import Comments from "../Components/Comments";
 import * as api from "../utils";
 import Voting from "./Voting";
+import PostComment from "./PostComment";
 
 class SingleArticle extends Component {
   state = { article: {} };
@@ -17,6 +18,7 @@ class SingleArticle extends Component {
           votes={article.votes}
           section="articles"
         />
+        <PostComment />
         <Comments id={this.props.article_id} />
       </div>
     );

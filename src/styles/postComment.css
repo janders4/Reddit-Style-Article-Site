@@ -1,0 +1,23 @@
+.postCommentForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.input {
+  width: 80%;
+  margin-top: 10px;
+  height: 70px;
+  font-size: 15px;
+}
+
+.button {
+  margin-top: 10px;
+  border: white 1px solid;
+  width: 30%;
+}
