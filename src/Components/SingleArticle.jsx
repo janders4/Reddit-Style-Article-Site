@@ -13,7 +13,11 @@ class SingleArticle extends Component {
       <div className="article">
         <h2 className="links">{article.title}</h2>
         <p>{article.body}</p>
-        <Voting votes={article.votes} />
+        <Voting
+          id={this.props.article_id}
+          votes={article.votes}
+          section="articles"
+        />
         <Comments id={this.props.article_id} />
       </div>
     );

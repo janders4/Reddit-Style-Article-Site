@@ -1,13 +1,13 @@
 .minArticle-container {
   display: grid;
-  grid-template-rows: 0.75fr 0.5fr 0.5fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
   grid-template-columns: 3fr 2fr 1.5fr;
   grid-template-areas:
     "title title title"
     "author author ."
     "comments comments likes";
   border: white 1px solid;
-  height: 120px;
+  height: 140px;
   margin: 10px;
   margin-bottom: 20px;
   background-color: rgba(240, 255, 255, 0.338);

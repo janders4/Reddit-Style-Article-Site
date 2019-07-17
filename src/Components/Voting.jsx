@@ -5,6 +5,10 @@ import "../styles/voting.css";
 import * as api from "../utils";
 
 class Voting extends Component {
+  state = {
+    voteChange: 0
+  };
+
   render() {
     return (
       <div>
@@ -15,18 +19,16 @@ class Voting extends Component {
             alt="vote-up"
             height="40px"
             width="40px"
-            value={1}
-            onClick={this.handleVote}
+            onClick={() => this.handleVote(1)}
           />
-          <h3>{this.props.votes}</h3>
+          <h3>{this.props.votes + this.state.voteChange}</h3>
           <img
             className="thumbsdown"
             src={thumbsDown}
             alt="vote-down"
             height="40px"
             width="40px"
-            value={-1}
-            onClick={this.handleVote}
+            onClick={() => this.handleVote(-1)}
           />
         </div>
         <hr className="orange-line" />
@@ -34,13 +36,11 @@ class Voting extends Component {
     );
   }
 
-  handleVote = event => {
-    event.preventDefault();
-    const vote = event;
-    console.log(vote);
-    const id = this.props.commentId;
-    // console.log(vote, id, " <<<<<<");
-    //api.postCommentVote(id, -1);
+  handleVote = vote => {
+    const section = this.props.section;
+    const id = this.props.id;
+    api.postCommentVote(id, vote, section).then(updatedArticle => {});
+    this.setState({ voteChange: this.state.voteChange + vote });
   };
 }
 

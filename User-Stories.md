@@ -7,14 +7,23 @@ DONE - view a list of all articles
 DONE - view a page for each topic with a list of related articles.
 DONE - view an individual article.
 DONE - view an individual article's comments.
+DONE - vote on a comment and immediately see the change.
+DONE - vote on an article and immediately see the change.
+
+Wednesday - post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+
 sort articles by:
 date created
 comment_count
 votes
-post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+
 delete my own comments (as a default logged in user. e.g. 'jessjelly').
-vote on an article and immediately see the change.
-vote on a comment and immediately see the change.
+
+Style To-Do:
+Add article voting to be part of article title and fixed in place
+Animations to delete
+Hover Effects
+Selected Effects
 
 As a hiring partner, I should be able to...
 use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).

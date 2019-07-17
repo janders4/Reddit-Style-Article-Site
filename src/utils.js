@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://reddit-clone-john.herokuapp.com/api/";
+const BASE_URL = "https://reddit-clone-john.herokuapp.com/api";
 export const getTopics = async () => {
   const { data } = await axios.get(`${BASE_URL}topics`);
   return data;
@@ -12,10 +12,10 @@ export const getTopics = async () => {
 
 export const fetchArticles = async topic => {
   if (topic === "All") {
-    const { data } = await axios.get(`${BASE_URL}articles`);
+    const { data } = await axios.get(`${BASE_URL}/articles`);
     return data;
   } else {
-    const { data } = await axios.get(`${BASE_URL}articles`, {
+    const { data } = await axios.get(`${BASE_URL}/articles`, {
       params: { topic }
     });
     return data;
@@ -23,18 +23,20 @@ export const fetchArticles = async topic => {
 };
 
 export const fetchArticleById = async id => {
-  const { data } = await axios.get(`${BASE_URL}articles/${id}`);
+  const { data } = await axios.get(`${BASE_URL}/articles/${id}`);
   return data;
 };
 
 export const fetchComments = async id => {
-  const { data } = await axios.get(`${BASE_URL}articles/33/comments`);
+  const { data } = await axios.get(`${BASE_URL}/articles/33/comments`);
   return data;
 };
 
-export const postCommentVote = async (id, vote) => {
+export const postCommentVote = async (id, vote, section) => {
   const voteObject = { inc_votes: vote };
-  const { data } = await axios.patch(`${BASE_URL}comments/${id}`, voteObject);
-  console.log(data);
+  const { data } = await axios.patch(
+    `${BASE_URL}/${section}/${id}`,
+    voteObject
+  );
   return data;
 };

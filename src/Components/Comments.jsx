@@ -13,8 +13,13 @@ class Comments extends Component {
         {this.state.comments.map(comment => {
           return (
             <div key={comment.comment_id}>
+              <h3>X</h3>
               <p>{comment.body}</p>
-              <Voting votes={comment.votes} commentId={comment.comment_id} />
+              <Voting
+                votes={comment.votes}
+                id={comment.comment_id}
+                section="comments"
+              />
             </div>
           );
         })}
