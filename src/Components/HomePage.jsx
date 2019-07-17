@@ -3,17 +3,32 @@ import Navi from "../Components/Navi";
 import Articles from "../Components/Articles";
 import "../styles/bodyContainer.css";
 import { Router } from "@reach/router";
+import Sort from "./Sort";
 
 class HomePage extends Component {
-  state = {};
+  state = {
+    sortBy: "votes",
+    direction: "desc"
+  };
   render() {
-    console.log(this.props);
+    const { sortBy, direction } = this.state;
     return (
       <div className="bodyContainer">
+        <Sort />
         <Navi className="navi" setTopic={this.topicChange} />
         <Router primary={false}>
-          <Articles className="articles" path="/" />
-          <Articles className="articles" path="/topic/:topic" />
+          <Articles
+            className="articles"
+            path="/"
+            sortBy={sortBy}
+            direction={direction}
+          />
+          <Articles
+            className="articles"
+            path="/topic/:topic"
+            sortBy={sortBy}
+            direction={direction}
+          />
         </Router>
       </div>
     );

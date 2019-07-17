@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/postComment.css";
 import * as api from "../utils";
-import { navigate } from "@reach/router/lib/history";
 
 class PostComment extends Component {
   state = {

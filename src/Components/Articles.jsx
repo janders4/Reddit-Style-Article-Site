@@ -30,7 +30,8 @@ class Articles extends Component {
   }
 
   getArticles = () => {
-    api.fetchArticles(this.props.topic).then(data => {
+    const { topic, sortBy, direction } = this.props;
+    api.fetchArticles(topic, sortBy, direction).then(data => {
       this.setState({ articles: data });
     });
   };

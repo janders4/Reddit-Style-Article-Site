@@ -10,14 +10,20 @@ export const getTopics = async () => {
 //   return word.charAt(0).toUpperCase() + word.slice(1);
 // };
 
-export const fetchArticles = async topic => {
+export const fetchArticles = async (topic, sortBy, direction) => {
+  console.log(topic, sortBy, direction);
   if (topic === "All") {
-    const { data } = await axios.get(`${BASE_URL}/articles`);
+    const { data } = await axios.get(
+      `${BASE_URL}/articles?sort_by=${sortBy}&&order=${direction}`
+    );
     return data;
   } else {
-    const { data } = await axios.get(`${BASE_URL}/articles`, {
-      params: { topic }
-    });
+    const { data } = await axios.get(
+      `${BASE_URL}/articles?sort_by=${sortBy}&&order=${direction}`,
+      {
+        params: { topic }
+      }
+    );
     return data;
   }
 };
