@@ -10,7 +10,6 @@ class Articles extends Component {
     topic: ""
   };
   render() {
-    console.log(this.props);
     const { articles } = this.state;
     return (
       <div className="articles">

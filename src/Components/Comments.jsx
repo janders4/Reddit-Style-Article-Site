@@ -56,13 +56,11 @@ class Comments extends Component {
     } else this.setState({ accessDenied: true });
   };
 
-  componentDidMount() {
-    this.getComments(this.props.id);
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.comments !== this.props.comments) {
+      this.setState({ comments: this.props.comments });
+    }
   }
-
-  getComments = id => {
-    api.fetchComments(id).then(comments => this.setState({ comments }));
-  };
 }
 
 export default Comments;

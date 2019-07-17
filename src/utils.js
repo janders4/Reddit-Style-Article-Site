@@ -28,7 +28,7 @@ export const fetchArticleById = async id => {
 };
 
 export const fetchComments = async id => {
-  const { data } = await axios.get(`${BASE_URL}/articles/33/comments`);
+  const { data } = await axios.get(`${BASE_URL}/articles/${id}/comments`);
   return data;
 };
 
@@ -43,5 +43,14 @@ export const postCommentVote = async (id, vote, section) => {
 
 export const deleteComment = async id => {
   const { data } = await axios.delete(`${BASE_URL}/comments/${id}`);
+  return data;
+};
+
+export const postComment = async (id, comment, author) => {
+  const commentObject = { username: author, body: comment };
+  const { data } = await axios.post(
+    `${BASE_URL}/articles/${id}/comments`,
+    commentObject
+  );
   return data;
 };

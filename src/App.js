@@ -9,7 +9,6 @@ import HomePage from "./Components/HomePage";
 class App extends Component {
   state = {};
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <Header />
