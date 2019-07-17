@@ -11,7 +11,6 @@ export const getTopics = async () => {
 // };
 
 export const fetchArticles = async topic => {
-  console.log(topic);
   if (topic === "All") {
     const { data } = await axios.get(`${BASE_URL}articles`);
     return data;
@@ -30,6 +29,12 @@ export const fetchArticleById = async id => {
 
 export const fetchComments = async id => {
   const { data } = await axios.get(`${BASE_URL}articles/33/comments`);
+  return data;
+};
+
+export const postCommentVote = async (id, vote) => {
+  const voteObject = { inc_votes: vote };
+  const { data } = await axios.patch(`${BASE_URL}comments/${id}`, voteObject);
   console.log(data);
   return data;
 };

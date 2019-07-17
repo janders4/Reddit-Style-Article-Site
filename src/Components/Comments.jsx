@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils";
+import Voting from "./Voting";
 
 class Comments extends Component {
   state = {
@@ -8,11 +9,12 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <h3>Comments</h3>
+        <h2>Comments</h2>
         {this.state.comments.map(comment => {
           return (
             <div key={comment.comment_id}>
               <p>{comment.body}</p>
+              <Voting votes={comment.votes} commentId={comment.comment_id} />
             </div>
           );
         })}

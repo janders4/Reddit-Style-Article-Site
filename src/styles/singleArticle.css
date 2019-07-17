@@ -11,11 +11,3 @@ h2 {
   /* text-decoration: none; */
   cursor: pointer;
 }
-
-.voting {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  padding-bottom: 20px;
-}
