@@ -6,6 +6,7 @@ import Voting from "./Voting";
 import PostComment from "./PostComment";
 import moment from "moment";
 import "../styles/articleBody.css";
+import Collapsible from "react-collapsible";
 
 class SingleArticle extends Component {
   state = { article: {}, comments: [] };
@@ -21,8 +22,10 @@ class SingleArticle extends Component {
           ).from()}`}</h3>
           <Voting id={articleId} votes={article.votes} section="articles" />
           <p>{article.body}</p>
-          <PostComment id={articleId} pushNewComment={this.pushNewComment} />
-          <Comments id={articleId} comments={this.state.comments} />
+          <Collapsible trigger="Comments" easing="linear">
+            <PostComment id={articleId} pushNewComment={this.pushNewComment} />
+            <Comments id={articleId} comments={this.state.comments} />
+          </Collapsible>
         </div>
       </div>
     );

@@ -4,7 +4,8 @@ import Voting from "./Voting";
 import deleteMe from "../images/trash-2-256.png";
 import "../styles/comments.css";
 import "../../node_modules/animate.css/animate.min.css";
-import Collapsible from "react-collapsible";
+
+import PostComment from "./PostComment";
 
 class Comments extends Component {
   state = {
@@ -16,43 +17,41 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <Collapsible trigger="Comments" easing="linear" transitionTime="500">
-          {this.state.comments.map((comment, index) => {
-            return (
-              <div
-                key={comment.comment_id}
-                // className={this.state.deleted !== 0 && "animated fadeOut"}
-              >
-                <span className="commentTitle">
-                  <p className="commentAuthor">Comment by: {comment.author} </p>
-                  {this.state.user === comment.author && (
-                    <img
-                      src={deleteMe}
-                      alt="delete"
-                      height="20px"
-                      width="20px"
-                      onClick={() =>
-                        this.deleteThisComment(
-                          comment.comment_id,
-                          index,
-                          comment.author
-                        )
-                      }
-                    />
-                  )}
-                </span>
+        {this.state.comments.map((comment, index) => {
+          return (
+            <div
+              key={comment.comment_id}
+              // className={this.state.deleted !== 0 && "animated fadeOut"}
+            >
+              <span className="commentTitle">
+                <p className="commentAuthor">Comment by: {comment.author} </p>
+                {this.state.user === comment.author && (
+                  <img
+                    src={deleteMe}
+                    alt="delete"
+                    height="20px"
+                    width="20px"
+                    onClick={() =>
+                      this.deleteThisComment(
+                        comment.comment_id,
+                        index,
+                        comment.author
+                      )
+                    }
+                  />
+                )}
+              </span>
 
-                <p>{comment.body}</p>
+              <p>{comment.body}</p>
 
-                <Voting
-                  votes={comment.votes}
-                  id={comment.comment_id}
-                  section="comments"
-                />
-              </div>
-            );
-          })}
-        </Collapsible>
+              <Voting
+                votes={comment.votes}
+                id={comment.comment_id}
+                section="comments"
+              />
+            </div>
+          );
+        })}
       </div>
     );
   }
