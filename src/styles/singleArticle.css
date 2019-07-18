@@ -4,11 +4,9 @@ p {
   max-width: 1000px;
   margin: auto;
 }
-
 h2 {
   color: white;
 }
-
 .links {
   color: white;
   /* text-decoration: none; */

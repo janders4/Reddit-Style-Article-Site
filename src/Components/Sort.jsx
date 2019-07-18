@@ -12,7 +12,7 @@ class Sort extends Component {
         </select>
         <label className="sortLabel">Direction:</label>
         <select onChange={this.handleDirectionChange}>
-          <option value="desc">Decending</option>
+          <option value="desc">Descending</option>
           <option value="asc">Ascending</option>
         </select>
       </div>

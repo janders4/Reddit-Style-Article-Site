@@ -6,7 +6,8 @@ import * as api from "../utils";
 
 class Voting extends Component {
   state = {
-    voteChange: 0
+    voteChange: 0,
+    voted: false
   };
 
   render() {
@@ -14,6 +15,7 @@ class Voting extends Component {
       <div>
         <div className="voting">
           <img
+            className="thumbsUp"
             src={thumbsUp}
             alt="vote-up"
             height="30px"
@@ -36,10 +38,12 @@ class Voting extends Component {
   }
 
   handleVote = vote => {
-    const section = this.props.section;
-    const id = this.props.id;
-    api.postCommentVote(id, vote, section).then(updatedArticle => {});
-    this.setState({ voteChange: this.state.voteChange + vote });
+    if (!this.state.voted) {
+      this.setState({ voteChange: this.state.voteChange + vote, voted: true });
+      const section = this.props.section;
+      const id = this.props.id;
+      api.postCommentVote(id, vote, section).then(updatedArticle => {});
+    }
   };
 }
 

@@ -6,15 +6,32 @@
   width: 100%;
   grid-area: header;
   height: 95px;
+  text-decoration: none;
 }
 
 .headerBox {
   border: white 7px solid;
   width: 30%;
-
+  text-decoration: none;
   min-width: 150px;
   margin: auto;
   height: auto;
   padding: 15px;
   box-shadow: 0 1px 4px rgba(7, 7, 7, 0.3);
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header h1 {
+  color: white;
+  text-decoration: none;
+}
+
+.header h1:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: scale(1.1);
 }

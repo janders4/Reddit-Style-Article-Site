@@ -4,53 +4,62 @@ import Voting from "./Voting";
 import deleteMe from "../images/trash-2-256.png";
 import "../styles/comments.css";
 import "../../node_modules/animate.css/animate.min.css";
+import Collapsible from "react-collapsible";
 
 class Comments extends Component {
   state = {
     comments: [],
     user: "tickle122",
-    accessDenied: false
+    accessDenied: false,
+    deleted: 0
   };
   render() {
     return (
       <div>
-        <h2>Comments</h2>
-        {this.state.comments.map((comment, index) => {
-          return (
-            <div key={comment.comment_id}>
-              <span className="commentTitle">
-                <p className="commentAuthor">Comment by: {comment.author} </p>
-                <img
-                  src={deleteMe}
-                  alt="delete"
-                  height="20px"
-                  width="20px"
-                  onClick={() =>
-                    this.deleteThisComment(
-                      comment.comment_id,
-                      index,
-                      comment.author
-                    )
-                  }
+        <Collapsible trigger="Comments" easing="linear" transitionTime="500">
+          {this.state.comments.map((comment, index) => {
+            return (
+              <div
+                key={comment.comment_id}
+                // className={this.state.deleted !== 0 && "animated fadeOut"}
+              >
+                <span className="commentTitle">
+                  <p className="commentAuthor">Comment by: {comment.author} </p>
+                  {this.state.user === comment.author && (
+                    <img
+                      src={deleteMe}
+                      alt="delete"
+                      height="20px"
+                      width="20px"
+                      onClick={() =>
+                        this.deleteThisComment(
+                          comment.comment_id,
+                          index,
+                          comment.author
+                        )
+                      }
+                    />
+                  )}
+                </span>
+
+                <p>{comment.body}</p>
+
+                <Voting
+                  votes={comment.votes}
+                  id={comment.comment_id}
+                  section="comments"
                 />
-              </span>
-
-              <p>{comment.body}</p>
-
-              <Voting
-                votes={comment.votes}
-                id={comment.comment_id}
-                section="comments"
-              />
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
+        </Collapsible>
       </div>
     );
   }
 
   deleteThisComment = (id, index, author) => {
     if (author === this.state.user) {
+      this.setState({ deleted: id });
       api.deleteComment(id);
       let newComments = this.state.comments;
       newComments.splice(index, 1);

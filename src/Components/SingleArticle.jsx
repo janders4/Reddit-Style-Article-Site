@@ -4,6 +4,8 @@ import Comments from "../Components/Comments";
 import * as api from "../utils";
 import Voting from "./Voting";
 import PostComment from "./PostComment";
+import moment from "moment";
+import "../styles/articleBody.css";
 
 class SingleArticle extends Component {
   state = { article: {}, comments: [] };
@@ -11,12 +13,17 @@ class SingleArticle extends Component {
     const { article } = this.state;
     const articleId = this.props.article_id;
     return (
-      <div className="article">
+      <div className="articleContainer">
         <h2 className="links">{article.title}</h2>
-        <Voting id={articleId} votes={article.votes} section="articles" />
-        <p>{article.body}</p>
-        <PostComment id={articleId} pushNewComment={this.pushNewComment} />
-        <Comments id={articleId} comments={this.state.comments} />
+        <div className="article">
+          <h3>{`Written by ${article.author} ${moment(
+            article.created_at
+          ).from()}`}</h3>
+          <Voting id={articleId} votes={article.votes} section="articles" />
+          <p>{article.body}</p>
+          <PostComment id={articleId} pushNewComment={this.pushNewComment} />
+          <Comments id={articleId} comments={this.state.comments} />
+        </div>
       </div>
     );
   }

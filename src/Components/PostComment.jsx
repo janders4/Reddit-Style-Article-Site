@@ -16,11 +16,13 @@ class PostComment extends Component {
             Add Comment:
           </label>
           <textarea
+            ref="commentInput"
             id="comment"
             className="input"
             wrap="soft"
             onChange={this.handleCommentChange}
             value={this.state.value}
+            required
           />
           <button className="button" type="submit">
             Submit
@@ -38,9 +40,11 @@ class PostComment extends Component {
     event.preventDefault();
     const { comment, author } = this.state;
     const articleId = this.props.id;
+    const textArea = this.refs.commentInput;
     api
       .postComment(articleId, comment, author)
       .then(({ comment }) => this.props.pushNewComment(comment));
+    textArea.value = "";
   };
 }
 
