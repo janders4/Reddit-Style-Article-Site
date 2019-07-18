@@ -1,6 +1,7 @@
 .footer {
   grid-area: footer;
   color: white;
+  height: 100%;
 }
 
 .orange-line {
@@ -10,10 +11,11 @@
   margin: auto;
   height: 5px;
   background-color: #985d55;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .footer h2 {
-  margin-top: 5px;
-  font-size: 18px;
+  margin-bottom: 5px;
+  color: grey;
+  font-size: 16px;
 }

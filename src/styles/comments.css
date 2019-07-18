@@ -10,3 +10,14 @@ img:hover {
   height: 33px;
   transition: 300ms;
 }
+
+.commentAuthor {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.commentTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

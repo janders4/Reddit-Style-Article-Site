@@ -12,13 +12,12 @@ class Voting extends Component {
   render() {
     return (
       <div>
-        <hr className="orange-line" />
         <div className="voting">
           <img
             src={thumbsUp}
             alt="vote-up"
-            height="40px"
-            width="40px"
+            height="30px"
+            width="30px"
             onClick={() => this.handleVote(1)}
           />
           <h3>{this.props.votes + this.state.voteChange || 0}</h3>
@@ -26,8 +25,8 @@ class Voting extends Component {
             className="thumbsdown"
             src={thumbsDown}
             alt="vote-down"
-            height="40px"
-            width="40px"
+            height="30px"
+            width="30px"
             onClick={() => this.handleVote(-1)}
           />
         </div>

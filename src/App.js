@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header className="header" />
         <Router className="routerBox">
           <HomePage path="/*" />
           <ArticleBody path="/article/:id" />

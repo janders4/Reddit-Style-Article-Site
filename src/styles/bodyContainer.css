@@ -2,7 +2,8 @@
   grid-area: articles;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 35fr;
+  width: 100%;
+  grid-template-rows: 30px 35fr;
   grid-template-areas:
     "nav"
     "articles";

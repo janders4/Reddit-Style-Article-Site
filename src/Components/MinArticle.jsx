@@ -7,6 +7,7 @@ class MinArticle extends Component {
     const { article } = this.props;
     return (
       <div className="minArticle-container">
+        <hr className="line" />
         <Link to={`/article/${article.article_id}`} className="title">
           <h3>{article.title}</h3>
         </Link>

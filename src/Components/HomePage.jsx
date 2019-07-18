@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navi from "../Components/Navi";
 import Articles from "../Components/Articles";
 import "../styles/bodyContainer.css";
+import "../styles/sort.css";
 import { Router } from "@reach/router";
 import Sort from "./Sort";
 
@@ -11,12 +12,16 @@ class HomePage extends Component {
     direction: "desc"
   };
   render() {
-    console.log(this.state, " <<<< State");
     const { sortBy, direction } = this.state;
     return (
       <div className="bodyContainer">
-        <Sort getSort={this.setSortParams} getDir={this.setDirectionParams} />
+        <Sort
+          className="sort"
+          getSort={this.setSortParams}
+          getDir={this.setDirectionParams}
+        />
         <Navi className="navi" setTopic={this.topicChange} />
+
         <Router primary={false}>
           <Articles
             className="articles"

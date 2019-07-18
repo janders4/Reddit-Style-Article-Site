@@ -12,7 +12,9 @@ class PostComment extends Component {
     return (
       <div className="postCommentForm">
         <form onSubmit={this.postNewComment}>
-          <label htmlFor="comment">Add Comment:</label>
+          <label className="commentLabel" htmlFor="comment">
+            Add Comment:
+          </label>
           <textarea
             id="comment"
             className="input"
@@ -21,7 +23,7 @@ class PostComment extends Component {
             value={this.state.value}
           />
           <button className="button" type="submit">
-            Comment
+            Submit
           </button>
         </form>
       </div>

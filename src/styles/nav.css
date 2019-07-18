@@ -1,5 +1,5 @@
-.nav {
-  /* grid-area: nav; */
+.navi {
+  grid-area: header;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -12,7 +12,15 @@
 }
 
 .links {
-  color: white;
+  color: rgb(155, 155, 155);
   text-decoration: none;
   cursor: pointer;
+}
+
+.links:focus {
+  color: rgb(205, 203, 203);
+}
+
+.links:hover {
+  text-shadow: 1px 1px rgba(128, 128, 128, 0.495);
 }

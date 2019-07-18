@@ -1,34 +1,45 @@
 .minArticle-container {
   display: grid;
-  grid-template-rows: 1fr 0.5fr 0.5fr;
-  grid-template-columns: 3fr 2fr 1.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr 0.5fr;
+  grid-template-columns: 1 1fr 1fr;
   grid-template-areas:
+    "line line line"
     "title title title"
-    "author author ."
-    "comments comments likes";
-  border: white 1px solid;
-  height: 140px;
+    ". author ."
+    ". comments ."
+    ". likes .";
+
+  height: 130px;
   margin: 10px;
   margin-bottom: 20px;
-  background-color: rgba(240, 255, 255, 0.338);
-  box-shadow: 0 2px 20px rgba(7, 7, 7, 0.3);
+  margin-top: 30px;
 }
 
+.line {
+  grid-area: line;
+  width: 45%;
+  border: #985d55;
+  border-radius: 10px;
+  margin: auto;
+  height: 2px;
+  background-color: #985d55;
+}
 .title {
   grid-area: title;
-  border: white 1px solid;
+  color: white;
 }
 
 .author {
   grid-area: author;
+  color: white;
 }
 
 .comments {
   grid-area: comments;
-  border: white 1px solid;
+  color: white;
 }
 
 .likes {
   grid-area: likes;
-  border: white 1px solid;
+  color: white;
 }

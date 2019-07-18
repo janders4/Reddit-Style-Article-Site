@@ -17,14 +17,13 @@ class Comments extends Component {
         {this.state.comments.map((comment, index) => {
           return (
             <div key={comment.comment_id}>
-              <p>{comment.author}</p>
-              <p>
-                {comment.body}
+              <span className="commentTitle">
+                <p className="commentAuthor">Comment by: {comment.author} </p>
                 <img
                   src={deleteMe}
                   alt="delete"
-                  height="30px"
-                  width="30px"
+                  height="20px"
+                  width="20px"
                   onClick={() =>
                     this.deleteThisComment(
                       comment.comment_id,
@@ -33,7 +32,9 @@ class Comments extends Component {
                     )
                   }
                 />
-              </p>
+              </span>
+
+              <p>{comment.body}</p>
 
               <Voting
                 votes={comment.votes}

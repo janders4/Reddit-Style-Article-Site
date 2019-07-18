@@ -13,8 +13,8 @@ class SingleArticle extends Component {
     return (
       <div className="article">
         <h2 className="links">{article.title}</h2>
-        <p>{article.body}</p>
         <Voting id={articleId} votes={article.votes} section="articles" />
+        <p>{article.body}</p>
         <PostComment id={articleId} pushNewComment={this.pushNewComment} />
         <Comments id={articleId} comments={this.state.comments} />
       </div>
