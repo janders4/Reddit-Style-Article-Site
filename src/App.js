@@ -7,6 +7,7 @@ import ArticleBody from "./Components/ArticleBody";
 import HomePage from "./Components/HomePage";
 import "../node_modules/animate.css/animate.min.css";
 import Loading from "./Components/Loading";
+import Error from "./Components/Error";
 
 class App extends Component {
   state = {};
@@ -18,6 +19,7 @@ class App extends Component {
         <Router className="routerBox animated fadeIn delay-2s">
           <HomePage path="/*" />
           <ArticleBody path="/article/:id" />
+          <Error path="/error" />
         </Router>
         <Footer />
       </div>

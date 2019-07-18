@@ -2,3 +2,7 @@
   grid-area: nav;
   height: 30px;
 }
+
+.sortLabel {
+  color: rgb(155, 155, 155);
+}

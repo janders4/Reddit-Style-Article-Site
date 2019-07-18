@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { navigate } from "@reach/router";
 import "../styles/articles.css";
 import "../styles/min-article.css";
 import MinArticle from "../Components/MinArticle";
@@ -36,10 +37,14 @@ class Articles extends Component {
   }
 
   getArticles = () => {
-    const { topic, sortBy, direction } = this.props;
-    api.fetchArticles(topic, sortBy, direction).then(data => {
-      this.setState({ articles: data });
-    });
+    try {
+      const { topic, sortBy, direction } = this.props;
+      api.fetchArticles(topic, sortBy, direction).then(data => {
+        this.setState({ articles: data });
+      });
+    } catch (error) {
+      navigate("/error");
+    }
   };
 }
 
