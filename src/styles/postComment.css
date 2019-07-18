@@ -4,9 +4,13 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   justify-content: center;
+  height: auto;
   width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  max-width: 500px;
+  margin-top: 35px;
+  margin-bottom: 45px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .commentLabel {
@@ -18,10 +22,12 @@
   margin-top: 10px;
   height: 70px;
   font-size: 15px;
+  max-width: 500px;
 }
 
 .button {
   margin-top: 10px;
+  max-width: 300px;
   border: white 1px solid;
   width: 30%;
 }

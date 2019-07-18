@@ -20,4 +20,6 @@ img:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-width: 250px;
+  margin: auto;
 }

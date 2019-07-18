@@ -3,6 +3,7 @@ import * as api from "../utils";
 import Voting from "./Voting";
 import deleteMe from "../images/trash-2-256.png";
 import "../styles/comments.css";
+import "../../node_modules/animate.css/animate.min.css";
 
 class Comments extends Component {
   state = {

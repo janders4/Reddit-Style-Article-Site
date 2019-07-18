@@ -5,6 +5,8 @@ import Footer from "./Components/Footer";
 import { Router } from "@reach/router";
 import ArticleBody from "./Components/ArticleBody";
 import HomePage from "./Components/HomePage";
+import "../node_modules/animate.css/animate.min.css";
+import Loading from "./Components/Loading";
 
 class App extends Component {
   state = {};
@@ -12,7 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header className="header" />
-        <Router className="routerBox">
+        {/* <Loading className="loading" /> */}
+        <Router className="routerBox animated fadeIn delay-2s">
           <HomePage path="/*" />
           <ArticleBody path="/article/:id" />
         </Router>

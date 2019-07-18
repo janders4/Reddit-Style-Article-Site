@@ -3,6 +3,7 @@
   font-family: "Open Sans", sans-serif;
   padding: 0;
 }
+
 .App {
   background-color: #424141;
   background-size: cover;
@@ -28,4 +29,8 @@
 
 .navi {
   grid-area: header;
+}
+
+.loading {
+  grid-area: articles;
 }
