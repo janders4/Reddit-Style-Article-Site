@@ -15,7 +15,7 @@ class App extends Component {
       <div className="App">
         <Header className="header" />
 
-        <Router className="routerBox animated fadeIn delay-1s">
+        <Router className="routerBox">
           <HomePage path="/*" />
           <ArticleBody path="/article/:id" />
           <Error path="/error" />
