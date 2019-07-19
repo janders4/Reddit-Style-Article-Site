@@ -5,8 +5,6 @@ import deleteMe from "../images/trash-2-256.png";
 import "../styles/comments.css";
 import "../../node_modules/animate.css/animate.min.css";
 
-import PostComment from "./PostComment";
-
 class Comments extends Component {
   state = {
     comments: [],

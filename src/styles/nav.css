@@ -1,5 +1,5 @@
 .navi {
-  grid-area: header;
+  /* grid-area: header; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -12,7 +12,7 @@
 }
 
 .links {
-  color: rgb(155, 155, 155);
+  color: white;
   text-decoration: none;
   cursor: pointer;
   margin-left: 20px;
