@@ -18,11 +18,11 @@
 .line {
   grid-area: line;
   width: 45%;
-  border: #985d55;
+  background-color: #d9b310;
+  border: #d9b310;
   border-radius: 10px;
   margin: auto;
   height: 2px;
-  background-color: #985d55;
 }
 .title {
   grid-area: title;

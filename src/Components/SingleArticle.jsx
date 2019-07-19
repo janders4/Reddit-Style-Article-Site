@@ -20,9 +20,16 @@ class SingleArticle extends Component {
           <h3>{`Written by ${article.author} ${moment(
             article.created_at
           ).from()}`}</h3>
-          <Voting id={articleId} votes={article.votes} section="articles" />
           <p>{article.body}</p>
-          <Collapsible trigger="Comments" easing="linear">
+          <Voting id={articleId} votes={article.votes} section="articles" />
+          <Collapsible
+            trigger={
+              <p className="collapse">{`Comments 💬 ${
+                article.comment_count
+              }`}</p>
+            }
+            easing="linear"
+          >
             <PostComment id={articleId} pushNewComment={this.pushNewComment} />
             <Comments id={articleId} comments={this.state.comments} />
           </Collapsible>

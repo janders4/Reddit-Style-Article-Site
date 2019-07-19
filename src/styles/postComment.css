@@ -27,7 +27,41 @@
 
 .button {
   margin-top: 10px;
-  max-width: 300px;
-  border: white 1px solid;
-  width: 30%;
+  background: #328cc1;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 30px;
+  max-width: 250px;
+  font-size: 1.2em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+.button:hover {
+  background: #fff;
+  color: #328cc1;
+}
+.button:before,
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #328cc1;
+  transition: 400ms ease all;
+}
+.button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
