@@ -4,19 +4,27 @@ import "../styles/articles.css";
 import "../styles/min-article.css";
 import MinArticle from "../Components/MinArticle";
 import * as api from "../utils";
+import Loading from "./Loading";
 
 class Articles extends Component {
   state = {
     articles: [],
-    topic: ""
+    topic: "",
+    isLoading: true
   };
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading } = this.state;
     return (
-      <div className="articles">
-        {articles.map(article => {
-          return <MinArticle article={article} key={article.article_id} />;
-        })}
+      <div>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className="articles">
+            {articles.map(article => {
+              return <MinArticle article={article} key={article.article_id} />;
+            })}
+          </div>
+        )}
       </div>
     );
   }
@@ -40,7 +48,7 @@ class Articles extends Component {
     try {
       const { topic, sortBy, direction } = this.props;
       api.fetchArticles(topic, sortBy, direction).then(data => {
-        this.setState({ articles: data });
+        this.setState({ articles: data, isLoading: false });
       });
     } catch (error) {
       navigate("/error");

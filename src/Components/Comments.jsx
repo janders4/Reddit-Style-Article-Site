@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils";
 import Voting from "./Voting";
-import deleteMe from "../images/trash-2-256.png";
+import deleteMe from "../images/trash-2-512.png";
 import "../styles/comments.css";
 import "../../node_modules/animate.css/animate.min.css";
 

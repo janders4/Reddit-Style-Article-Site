@@ -9,7 +9,8 @@ import Sort from "./Sort";
 class HomePage extends Component {
   state = {
     sortBy: "votes",
-    direction: "desc"
+    direction: "desc",
+    isLoading: true
   };
   render() {
     const { sortBy, direction } = this.state;
@@ -21,6 +22,7 @@ class HomePage extends Component {
           getDir={this.setDirectionParams}
         />
         <Navi className="navi" setTopic={this.topicChange} />
+
         <div className="bodyContainer">
           <Router primary={false}>
             <Articles

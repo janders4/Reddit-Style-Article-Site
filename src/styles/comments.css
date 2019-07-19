@@ -5,10 +5,6 @@ img {
 }
 
 img:hover {
-  box-shadow: 0, 0, 10px, 5px, red;
-  width: 31px;
-  height: 31px;
-  transition: 300ms;
   cursor: pointer;
 }
 

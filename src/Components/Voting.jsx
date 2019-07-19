@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import thumbsUp from "../images/thumbs-up-3-128.png";
-import thumbsDown from "../images/thumbs-down-256.png";
+import thumbsUp from "../images/thumbs-up-3-512.png";
+import thumbsDown from "../images/thumbs-down-512.png";
 import "../styles/voting.css";
 import * as api from "../utils";
 
