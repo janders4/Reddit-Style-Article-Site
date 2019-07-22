@@ -10,15 +10,23 @@ class Comments extends Component {
     comments: [],
     user: "tickle122",
     accessDenied: false,
-    deleted: 0
+    deleted: false,
+    deletedId: null
   };
   render() {
-    const { comments, user } = this.state;
+    const { comments, user, deleted, deletedId } = this.state;
     return (
       <div>
         {comments.map((comment, index) => {
           return (
-            <div key={comment.comment_id}>
+            <div
+              key={comment.comment_id}
+              className={
+                deleted && deletedId === comment.comment_id
+                  ? "animated slideOutLeft"
+                  : null
+              }
+            >
               <span className="commentTitle">
                 <p className="commentAuthor">Comment by: {comment.author} </p>
                 {user === comment.author && (
@@ -54,11 +62,13 @@ class Comments extends Component {
 
   deleteThisComment = (id, index, author) => {
     if (author === this.state.user) {
-      this.setState({ deleted: id });
+      this.setState({ deleted: true, deletedId: id });
       api.deleteComment(id);
-      let newComments = this.state.comments;
-      newComments.splice(index, 1);
-      this.setState({ comments: newComments });
+      setTimeout(() => {
+        let newComments = this.state.comments;
+        newComments.splice(index, 1);
+        this.setState({ comments: newComments, deleted: false });
+      }, 600);
     } else this.setState({ accessDenied: true });
   };
 
