@@ -21,7 +21,7 @@ class HomePage extends Component {
           getSort={this.setSortParams}
           getDir={this.setDirectionParams}
         />
-        <Navi className="navi" setTopic={this.topicChange} />
+        <Navi className="navi" />
 
         <div className="bodyContainer">
           <Router primary={false}>

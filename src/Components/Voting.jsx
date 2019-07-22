@@ -38,11 +38,12 @@ class Voting extends Component {
   }
 
   handleVote = vote => {
-    if (!this.state.voted) {
-      this.setState({ voteChange: this.state.voteChange + vote, voted: true });
+    const { voted, voteChange } = this.state;
+    if (!voted) {
+      this.setState({ voteChange: voteChange + vote, voted: true });
       const section = this.props.section;
       const id = this.props.id;
-      api.postCommentVote(id, vote, section).then(updatedArticle => {});
+      api.postCommentVote(id, vote, section);
     }
   };
 }

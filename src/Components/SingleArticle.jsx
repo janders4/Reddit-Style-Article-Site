@@ -12,8 +12,9 @@ import Loading from "./Loading";
 class SingleArticle extends Component {
   state = { article: {}, comments: [], isLoading: true };
   render() {
-    const { article } = this.state;
+    const { article, comments } = this.state;
     const articleId = this.props.article_id;
+
     return (
       <div className="articleContainer">
         {this.state.isLoading ? (
@@ -39,7 +40,7 @@ class SingleArticle extends Component {
                   id={articleId}
                   pushNewComment={this.pushNewComment}
                 />
-                <Comments id={articleId} comments={this.state.comments} />
+                <Comments id={articleId} comments={comments} />
               </Collapsible>
             </div>
           </div>
@@ -48,9 +49,9 @@ class SingleArticle extends Component {
     );
   }
   componentDidMount() {
-    this.getArticleById(this.props.article_id);
-
-    this.getComments(this.props.article_id);
+    const articleId = this.props.article_id;
+    this.getArticleById(articleId);
+    this.getComments(articleId);
   }
 
   getArticleById = id => {

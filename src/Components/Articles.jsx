@@ -10,7 +10,8 @@ class Articles extends Component {
   state = {
     articles: [],
     topic: "",
-    isLoading: true
+    isLoading: true,
+    sortChange: false
   };
   render() {
     const { articles, isLoading } = this.state;
@@ -33,13 +34,7 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.topic !== prevProps.topic) {
-      this.getArticles();
-    }
-    if (this.props.sortBy !== prevProps.sortBy) {
-      this.getArticles();
-    }
-    if (this.props.direction !== prevProps.direction) {
+    if (this.props !== prevProps) {
       this.getArticles();
     }
   }
