@@ -13,17 +13,15 @@ class Comments extends Component {
     deleted: 0
   };
   render() {
+    const { comments, user } = this.state;
     return (
       <div>
-        {this.state.comments.map((comment, index) => {
+        {comments.map((comment, index) => {
           return (
-            <div
-              key={comment.comment_id}
-              // className={this.state.deleted !== 0 && "animated fadeOut"}
-            >
+            <div key={comment.comment_id}>
               <span className="commentTitle">
                 <p className="commentAuthor">Comment by: {comment.author} </p>
-                {this.state.user === comment.author && (
+                {user === comment.author && (
                   <img
                     src={deleteMe}
                     alt="delete"

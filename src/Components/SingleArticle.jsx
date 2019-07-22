@@ -8,6 +8,7 @@ import moment from "moment";
 import "../styles/articleBody.css";
 import Collapsible from "react-collapsible";
 import Loading from "./Loading";
+import { navigate } from "@reach/router";
 
 class SingleArticle extends Component {
   state = { article: {}, comments: [], isLoading: true };
@@ -57,7 +58,8 @@ class SingleArticle extends Component {
   getArticleById = id => {
     api
       .fetchArticleById(id)
-      .then(({ article }) => this.setState({ article, isLoading: false }));
+      .then(({ article }) => this.setState({ article, isLoading: false }))
+      .catch(err => navigate("/error"));
   };
 
   getComments = id => {

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import spock from "../images/spock.png";
 
 class Error extends Component {
   render() {
     return (
       <div>
-        <h2>Opps... Something went wrong</h2>
+        <img src={spock} alt="error screen" height="200px" width="180px" />
+        <h3>Opps... Something went wrong</h3>
       </div>
     );
   }

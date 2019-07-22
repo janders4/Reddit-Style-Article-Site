@@ -40,14 +40,13 @@ class Articles extends Component {
   }
 
   getArticles = () => {
-    try {
-      const { topic, sortBy, direction } = this.props;
-      api.fetchArticles(topic, sortBy, direction).then(data => {
+    const { topic, sortBy, direction } = this.props;
+    api
+      .fetchArticles(topic, sortBy, direction)
+      .then(data => {
         this.setState({ articles: data, isLoading: false });
-      });
-    } catch (error) {
-      navigate("/error");
-    }
+      })
+      .catch(err => navigate("/error"));
   };
 }
 
