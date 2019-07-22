@@ -39,10 +39,13 @@ class Voting extends Component {
 
   handleVote = vote => {
     const { voted, voteChange } = this.state;
+    const section = this.props.section;
+    const id = this.props.id;
     if (!voted) {
       this.setState({ voteChange: voteChange + vote, voted: true });
-      const section = this.props.section;
-      const id = this.props.id;
+      api.postCommentVote(id, vote, section);
+    } else {
+      this.setState({ voteChange: 0, voted: false });
       api.postCommentVote(id, vote, section);
     }
   };
