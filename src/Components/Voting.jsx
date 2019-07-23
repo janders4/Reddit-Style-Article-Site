@@ -6,13 +6,12 @@ import * as api from "../utils";
 
 class Voting extends Component {
   state = {
-    voteChange: 0,
-    voted: false,
-    startingVotes: this.props.votes
+    votes: this.props.votes,
+    currentVotes: 0
   };
 
   render() {
-    const { voteChange, startingVotes } = this.state;
+    const { votes, currentVotes } = this.state;
     return (
       <div>
         <div className="voting">
@@ -22,16 +21,16 @@ class Voting extends Component {
             alt="vote-up"
             height="30px"
             width="30px"
-            onClick={() => this.handleVote(1)}
+            onClick={currentVotes < 1 ? () => this.handleVote(1) : null}
           />
-          <h3>{startingVotes + voteChange || 0}</h3>
+          <h3>{votes || 0}</h3>
           <img
             className="thumbsdown"
             src={thumbsDown}
             alt="vote-down"
             height="30px"
             width="30px"
-            onClick={() => this.handleVote(-1)}
+            onClick={currentVotes > -1 ? () => this.handleVote(-1) : null}
           />
         </div>
         <hr className="orange-line" />
@@ -40,18 +39,15 @@ class Voting extends Component {
   }
 
   handleVote = vote => {
-    const { voted, voteChange } = this.state;
-    const section = this.props.section;
-    const id = this.props.id;
-    if (!voted) {
-      this.setState({
-        voteChange: voteChange + vote,
-        voted: true
-      });
+    const { votes, currentVotes } = this.state;
+    const { section, id } = this.props;
+    const baseVotes = this.props.votes;
+    this.setState({
+      votes: votes + vote,
+      currentVotes: currentVotes + vote
+    });
+    if (votes <= baseVotes + 1 && votes >= baseVotes - 1) {
       api.postCommentVote(id, vote, section);
-    } else {
-      this.setState({ voteChange: vote * -1, voted: false });
-      api.postCommentVote(id, vote * -1, section);
     }
   };
 }
